@@ -14,8 +14,8 @@ const Greetings = () => {
           Download CV
         </Button>
         <Button icon={<GithubOutlined />} ghost shape="circle" style={{ marginRight: '12px' }} />
-        <Button icon={<WhatsAppOutlined />} ghost shape="circle" style={{ marginRight: '12px', color: 'green' }} />
-        <Button icon={<LinkedinFilled />} ghost shape="circle" />
+        <Button icon={<WhatsAppOutlined />} ghost shape="circle" style={{ marginRight: '12px', color: '#43C553' }} />
+        <Button icon={<LinkedinFilled />} ghost shape="circle" style={{ color: '#0966C2' }} />
       </div>
     </div>
   )
