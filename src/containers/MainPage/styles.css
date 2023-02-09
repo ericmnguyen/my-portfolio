@@ -1,0 +1,41 @@
+.main-page {
+  min-height: 100vh;
+  background-color: rgb(7, 9, 10);
+}
+.main-page__dev-name {
+  padding: 40px 0px 0px 45px;
+  font-size: 28px;
+}
+.main-page__dev-name--white {
+  color: white;
+}
+.main-page__bracket--blue {
+  color: rgb(22, 133, 223);
+}
+
+.greetings {
+  margin: 25vh 0px 0px 45px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.greetings__line1 {
+  text-transform: lowercase;
+  font-size: 80px;
+  font-weight: 100;
+  font-family: monospace;
+  margin-bottom: 12px;
+  letter-spacing: 21px;
+}
+.greetings__line2 {
+  font-size: 120px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.greetings__line3 {
+  letter-spacing: 21px;
+  color: rgb(22, 133, 223);
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 18px;
+}
