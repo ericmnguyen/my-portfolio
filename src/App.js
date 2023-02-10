@@ -1,13 +1,17 @@
 import './App.css';
 import MainPage from './containers/MainPage';
-import { Button } from 'antd';
 import 'antd/dist/reset.css';
+import NavigationPanel from './containers/Menu';
 
 function App() {
   return (
     <div className='App'>
+      <NavigationPanel />
       <MainPage />
-      <Button type='primary'>Button</Button>
+      <div style={{ minHeight: '100vh', width: '100%', zIndex: '2', backgroundColor: 'white', position: 'absolute' }}>
+        Experience page
+      </div>
+      {/* <Button type='primary' style={{ zIndex: '2' }}>Button</Button> */}
     </div>
   );
 }

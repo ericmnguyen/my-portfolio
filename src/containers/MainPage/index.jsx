@@ -1,5 +1,6 @@
 import React from 'react';
 import Greetings from './Greetings';
+import portrait from './IMG_0825.png';
 import './styles.css';
 
 const MainPage = () => {
@@ -12,7 +13,9 @@ const MainPage = () => {
       </div>
       <div>
         <Greetings />
+        <img className='portrait' src={portrait} alt='me' />
       </div>
+      <span className='circle'></span>
     </div>
   )
 }

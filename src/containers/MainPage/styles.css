@@ -1,9 +1,11 @@
+/** Background customization */
 .main-page {
   min-height: 100vh;
   background-color: rgb(7, 9, 10);
+  position: relative;
 }
 .main-page__dev-name {
-  padding: 40px 0px 0px 45px;
+  padding: 5vh 0px 0px 15vw;
   font-size: 28px;
 }
 .main-page__dev-name--white {
@@ -13,8 +15,10 @@
   color: rgb(22, 133, 223);
 }
 
+/** Title customization */
+
 .greetings {
-  margin: 25vh 0px 0px 45px;
+  margin: 18vh 0px 0px 15vw;
   display: flex;
   flex-direction: column;
   color: white;
@@ -38,4 +42,79 @@
   font-weight: 400;
   font-size: 28px;
   margin-bottom: 18px;
+}
+
+/**
+  Button customization
+*/
+.ant-btn-default:hover, .ant-btn-default:not(:disabled):hover {
+  border-color: transparent;
+}
+
+.btn-download-cv.ant-btn-default {
+  box-shadow: -2px 1px 8px #2863cf, 0px -1px 8px #6f22d3, -3px -5px 8px #a82ce2;
+  border-color: transparent;
+  margin-right: 15px;
+  color: white;
+}
+
+.btn-download-cv.ant-btn-default:hover {
+  color: white;
+  transform: scale(1.05,1.05);
+  transition: transform 0.1s;
+}
+
+.btn-git.ant-btn-default{
+  box-shadow: -2px 1px 8px #caced4;
+  border-color: transparent;
+  margin-right: 15px;
+  color: white;
+}
+.btn-git.ant-btn-default:hover{
+  color: white;
+  transform: scale(1.2,1.2);
+  transition: transform 0.1s;
+}
+
+.btn-linkedin.ant-btn-default {
+  box-shadow: -2px 1px 8px #2863cf;
+  border-color: transparent;
+  margin-right: 15px;
+  color: #0966C2;
+}
+.btn-linkedin.ant-btn-default:hover {
+  transform: scale(1.2,1.2);
+  transition: transform 0.1s;
+}
+
+.btn-whatsapp.ant-btn-default {
+  box-shadow: -2px 1px 8px #08a01c;
+  border-color: transparent;
+  margin-right: 15px;
+  color: #43C553;
+}
+.btn-whatsapp.ant-btn-default:hover {
+  color: #32d445;
+  transform: scale(1.2,1.2);
+  transition: transform 0.1s;
+}
+
+/** Circle customization */
+.circle {
+  position: absolute;
+  left: -30%;
+  top: 70vh;
+  width: 80vw;
+  height: 50vw;
+  border-radius: 50%;
+  box-shadow: 3px -12px 18px rgb(202 38 180), 12px -16px 24px rgb(120 35 146), 30px -35px 95px rgb(57, 55, 190);
+  background-color: transparent;
+  z-index: 1;
+}
+
+img.portrait {
+  top: 10vh;
+  right: 35px;
+  position: absolute;
+  height: 100%;
 }
