@@ -1,16 +1,19 @@
 /** Background customization */
 .main-page {
   min-height: 100vh;
-  background-color: rgb(7, 9, 10);
+  background-color: #0e0e14;
   position: relative;
 }
+
 .main-page__dev-name {
   padding: 5vh 0px 0px 15vw;
   font-size: 28px;
 }
+
 .main-page__dev-name--white {
   color: white;
 }
+
 .main-page__bracket--blue {
   color: rgb(22, 133, 223);
 }
@@ -23,6 +26,7 @@
   flex-direction: column;
   color: white;
 }
+
 .greetings__line1 {
   text-transform: lowercase;
   font-size: 80px;
@@ -30,24 +34,30 @@
   font-family: monospace;
   margin-bottom: 12px;
   letter-spacing: 21px;
+  z-index: 1;
 }
+
 .greetings__line2 {
   font-size: 120px;
   font-weight: bold;
   margin-bottom: 15px;
+  z-index: 1;
 }
+
 .greetings__line3 {
   letter-spacing: 21px;
   color: rgb(22, 133, 223);
   font-weight: 400;
   font-size: 28px;
   margin-bottom: 18px;
+  z-index: 1;
 }
 
 /**
   Button customization
 */
-.ant-btn-default:hover, .ant-btn-default:not(:disabled):hover {
+.ant-btn-default:hover,
+.ant-btn-default:not(:disabled):hover {
   border-color: transparent;
 }
 
@@ -60,19 +70,20 @@
 
 .btn-download-cv.ant-btn-default:hover {
   color: white;
-  transform: scale(1.05,1.05);
+  transform: scale(1.05, 1.05);
   transition: transform 0.1s;
 }
 
-.btn-git.ant-btn-default{
+.btn-git.ant-btn-default {
   box-shadow: -2px 1px 8px #caced4;
   border-color: transparent;
   margin-right: 15px;
   color: white;
 }
-.btn-git.ant-btn-default:hover{
+
+.btn-git.ant-btn-default:hover {
   color: white;
-  transform: scale(1.2,1.2);
+  transform: scale(1.2, 1.2);
   transition: transform 0.1s;
 }
 
@@ -82,8 +93,9 @@
   margin-right: 15px;
   color: #0966C2;
 }
+
 .btn-linkedin.ant-btn-default:hover {
-  transform: scale(1.2,1.2);
+  transform: scale(1.2, 1.2);
   transition: transform 0.1s;
 }
 
@@ -93,9 +105,10 @@
   margin-right: 15px;
   color: #43C553;
 }
+
 .btn-whatsapp.ant-btn-default:hover {
   color: #32d445;
-  transform: scale(1.2,1.2);
+  transform: scale(1.2, 1.2);
   transition: transform 0.1s;
 }
 
@@ -108,13 +121,30 @@
   height: 50vw;
   border-radius: 50%;
   box-shadow: 3px -12px 18px rgb(202 38 180), 12px -16px 24px rgb(120 35 146), 30px -35px 95px rgb(57, 55, 190);
-  background-color: transparent;
+  background-color: #0e0e14;
   z-index: 1;
 }
 
-img.portrait {
-  top: 10vh;
-  right: 35px;
-  position: absolute;
-  height: 100%;
+@media only screen and (min-width: 1600px) {
+  img.portrait {
+    top: 10vh;
+    right: 10vh;
+    position: absolute;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width:1600px) {
+  img.portrait {
+    top: 10vh;
+    right: 12px;
+    position: absolute;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  img.portrait {
+    display: none;
+  }
 }

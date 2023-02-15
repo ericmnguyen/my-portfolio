@@ -1,7 +1,7 @@
 import {
-  ContainerOutlined,
+  ContactsOutlined,
+  HomeOutlined,
   PieChartOutlined,
-  DesktopOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 import './styles.css';
@@ -16,16 +16,16 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
-  getItem('Option 3', '3', <ContainerOutlined />),
+  getItem('Home', '1', <HomeOutlined />),
+  getItem('My Expertise', '2', <PieChartOutlined />),
+  getItem('Contact Me', '3', <ContactsOutlined />),
 ];
 const NavigationPanel = () => {
   return (
     <div className='navigation-panel'>
       <Menu
         defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
+        defaultOpenKeys={['1']}
         mode="inline"
         theme="dark"
         inlineCollapsed

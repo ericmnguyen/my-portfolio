@@ -1,6 +1,6 @@
 import React from 'react';
 import Greetings from './Greetings';
-import portrait from './IMG_0825.png';
+import portrait from '../../avatar.png';
 import './styles.css';
 
 const MainPage = () => {
