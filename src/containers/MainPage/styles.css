@@ -125,6 +125,40 @@
   z-index: 1;
 }
 
+@media only screen and (max-width: 600px) {
+  .main-page__dev-name {
+    padding: 5vh 0px 0px 15vw;
+    font-size: 12px;
+  }
+  .greetings {
+    margin: 12px 0px 0px 15vw;
+  }
+  
+  .greetings__line1 {
+    text-transform: lowercase;
+    font-size: 20px;
+  }
+  
+  .greetings__line2 {
+    font-size: 60px;
+  }
+  
+  .greetings__line3 {
+    letter-spacing: 4px;
+    font-size: 12px;
+  }
+  .btn-download-cv.ant-btn-default {
+    width: 50%;
+    margin-bottom: 15px;
+  }
+  .avatar {
+    width: 250px;
+  }
+  .circle {
+    top: 90vh;
+  }
+}
+
 @media only screen and (min-width: 1600px) {
   img.portrait {
     top: 10vh;

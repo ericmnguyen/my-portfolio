@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'antd';
 import { DownloadOutlined, GithubOutlined, LinkedinFilled, WhatsAppOutlined } from '@ant-design/icons';
+import avatar from '../../avatar_square.png';
 import './styles.css';
 
 const Greetings = () => {
@@ -35,6 +36,9 @@ const Greetings = () => {
       <div className='greetings__line1'>Hello!</div>
       <div className='greetings__line2'>I'm Eric</div>
       <div className='greetings__line3'>front end developer</div>
+      <div className='greetings__line_avatar'>
+      <img className='avatar' src={avatar} alt='me' />
+      </div>
       <div className='greetings__line4'>
         <Button ghost shape="round" onClick={handleOnClickDownloadCV} icon={<DownloadOutlined />} className="btn-download-cv" size='large'>
           Download CV
