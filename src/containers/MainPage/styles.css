@@ -125,7 +125,11 @@
   z-index: 1;
 }
 
-@media only screen and (max-width: 600px) {
+.avatar {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
   .main-page__dev-name {
     padding: 5vh 0px 0px 15vw;
     font-size: 12px;
@@ -152,33 +156,22 @@
     margin-bottom: 15px;
   }
   .avatar {
-    width: 250px;
+    display: inline;
+    width: 75%;
   }
   .circle {
     top: 90vh;
   }
-}
-
-@media only screen and (min-width: 1600px) {
   img.portrait {
-    top: 10vh;
-    right: 10vh;
-    position: absolute;
-    height: 100%;
+    display: none;
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width:1600px) {
+@media only screen and (min-width: 768px) {
   img.portrait {
     top: 10vh;
     right: 12px;
     position: absolute;
     height: 100%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  img.portrait {
-    display: none;
   }
 }
