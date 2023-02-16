@@ -16,9 +16,9 @@ const MainPage = () => {
         <img className='portrait' src={portrait} alt='me' />
       </div>
       <span className='scroll'>
-        <a class="scrollDown">
+        <span class="scrollDown">
           <span></span>
-        </a>
+        </span>
       </span>
       <span className='circle'></span>
     </div>

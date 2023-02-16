@@ -1,0 +1,26 @@
+.expertise-page {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 2;
+  background-color: #0e0e14;
+  color: white;
+  position: absolute;
+}
+
+.expertise__divider {
+  color: white;
+}
+
+.tagcloud {
+  min-width: 100% !important;
+  width: 100% !important;
+  min-height: 100% !important;
+  height: 700px !important;
+}
+
+.about-me {
+  padding: 12px;
+}
+.about-me__title {
+  font-family: Caveat,cursive;
+}
