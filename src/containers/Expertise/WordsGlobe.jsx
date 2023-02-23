@@ -1,5 +1,6 @@
 import React from 'react';
 import { TagCloud } from "@frank-mayer/react-tag-cloud";
+import {isMobile} from 'react-device-detect';
 
 const WordsGlobe = () => (
   <TagCloud
@@ -7,7 +8,7 @@ const WordsGlobe = () => (
     onClickOptions={{ passive: false }}
     options={{
       maxSpeed: 'fast',
-      radius: '250'
+      radius: isMobile ? '180' : '250'
     }}
   >
     {[
@@ -29,7 +30,8 @@ const WordsGlobe = () => (
       'SASS',
       'HTML',
       'React hooks form',
-      'React hooks'
+      'React hooks',
+      'Terragrunt'
     ]}
   </TagCloud>
 )
