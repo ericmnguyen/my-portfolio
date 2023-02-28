@@ -5,9 +5,9 @@ import {isMobile} from 'react-device-detect';
 const WordsGlobe = () => (
   <TagCloud
     onClick={(tag, ev) => console.log(tag)}
-    onClickOptions={{ passive: false }}
+    onClickOptions={{ passive: true }}
     options={{
-      maxSpeed: 'fast',
+      maxSpeed: 'normal',
       radius: isMobile ? '180' : '250'
     }}
   >
