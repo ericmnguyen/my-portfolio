@@ -3,6 +3,7 @@ import { Col, Row } from 'antd';
 import './styles.css';
 import WordsGlobe from "./WordsGlobe";
 import AboutMe from "./AboutMe";
+import ScrollDownIcon from "../../components/ScrollDownIcon";
 
 
 const Expertise = () => (
@@ -15,6 +16,7 @@ const Expertise = () => (
         <WordsGlobe />
       </Col>
     </Row>
+    <ScrollDownIcon />
   </div>
 );
 export default Expertise;

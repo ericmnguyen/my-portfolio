@@ -23,8 +23,10 @@
 .greetings {
   margin: 18vh 0px 0px 15vw;
   display: flex;
+  align-items: start;
   flex-direction: column;
   color: white;
+  width: auto;
 }
 
 .greetings__line1 {
@@ -51,6 +53,47 @@
   font-size: 28px;
   margin-bottom: 18px;
   z-index: 1;
+}
+
+.greetings__line3 .type-writer {
+  border-right: solid white;
+  border-width: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  animation: typing 3s steps(13, end),
+    blink-caret 1s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: #0966C2
+  }
+
+  50% {
+    border-color: transparent
+  }
+}
+
+.greetings__line_avatar {
+  width: 100%;
+}
+.greetings__line4 {
+  width: 100%;
 }
 
 /**
@@ -129,113 +172,45 @@
   display: none;
 }
 
-/** Scroll down animation */
-span.scroll {
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: absolute;
-  top: 90%;
-  left: 90%;
-}
-
-.scrollDown {
-  display: flex;
-  justify-content: center;
-}
-
-.scrollDown span {
-  width: 5px;
-  height: 10px;
-  border-radius: 30px;
-  margin-top: 10px;
-  position: relative;
-}
-
-.scrollDown span::before {
-  position: absolute;
-  content: '';
-  width: 15px;
-  height: 15px;
-  border: none;
-  border-right: 2px solid #fff;
-  border-top: 2px solid #fff;
-  transform: translateY(-10px) rotate(135deg);
-  left: -6px;
-  margin-top: 10px;
-  opacity: 0;
-  animation: ani 1.8s infinite linear;
-}
-
-
-.scrollDown span::after {
-  position: absolute;
-  content: '';
-  width: 15px;
-  height: 15px;
-  border: none;
-  border-right: 2px solid #fff;
-  border-top: 2px solid #fff;
-  transform: translateY(-10px) rotate(135deg);
-  left: -6px;
-  margin-top: 10px;
-  opacity: 0;
-
-  animation: ani 1.8s infinite linear;
-  animation-delay: 0.8s;
-}
-
-@keyframes ani {
-  0% {
-      margin-top: 10px;
-      opacity: 0;
-  }
-
-  50% {
-      margin-top: 25px;
-      opacity: 1;
-  }
-
-  100% {
-      margin-top: 40px;
-      opacity: 0;
-  }
-}
-
 /** Responsive customization */
 @media only screen and (max-width: 820px) {
   .main-page__dev-name {
     padding: 5vh 0px 0px 15vw;
     font-size: 12px;
   }
+
   .greetings {
     margin: 12px 0px 0px 15vw;
   }
-  
+
   .greetings__line1 {
     text-transform: lowercase;
     font-size: 20px;
   }
-  
+
   .greetings__line2 {
     font-size: 60px;
   }
-  
+
   .greetings__line3 {
     letter-spacing: 4px;
     font-size: 12px;
   }
+
   .btn-download-cv.ant-btn-default {
     width: 50%;
     margin-bottom: 15px;
   }
+
   .avatar {
     display: inline;
     width: 75%;
   }
+
   .circle {
     top: 90vh;
   }
+
   img.portrait {
     display: none;
   }

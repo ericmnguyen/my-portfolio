@@ -8,7 +8,7 @@ const WordsGlobe = () => (
     onClickOptions={{ passive: true }}
     options={{
       maxSpeed: 'normal',
-      radius: isMobile ? '180' : '250'
+      radius: isMobile ? '150' : '250'
     }}
   >
     {[

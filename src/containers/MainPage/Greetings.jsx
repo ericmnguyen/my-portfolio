@@ -3,6 +3,7 @@ import { Button } from 'antd';
 import { DownloadOutlined, GithubOutlined, LinkedinFilled, WhatsAppOutlined } from '@ant-design/icons';
 import avatar from '../../avatar_square.png';
 import './styles.css';
+import TypeWriter from './TypeWriter';
 
 const Greetings = () => {
   const handleOnClickDownloadCV = () => {
@@ -35,7 +36,7 @@ const Greetings = () => {
     <div className='greetings'>
       <div className='greetings__line1'>Hello!</div>
       <div className='greetings__line2'>I'm Eric</div>
-      <div className='greetings__line3'>front end developer</div>
+      <TypeWriter />
       <div className='greetings__line_avatar'>
       <img className='avatar' src={avatar} alt='me' />
       </div>
