@@ -4,7 +4,7 @@ import './styles.css';
 const ScrollDownIcon = () => {
   return (
     <span className='scroll'>
-      <span class="scrollDown">
+      <span className="scrollDown">
         <span></span>
       </span>
     </span>
