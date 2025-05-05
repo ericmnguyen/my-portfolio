@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const TypeWriter = () => {
-  const [intro, setIntro] = useState(0);
+  const [intro, setIntro] = useState(
+    <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
+              I'm a full stack web developer.
+            </div>
+  );
 
   useEffect(() => {
     let counter = 0;
@@ -15,26 +19,26 @@ const TypeWriter = () => {
       switch (counter) {
         case 0:
           setIntro(
-            <div id="intro" className='type-writer border-r-2 whitespace-nowrap overflow-hidden border-blue-600'>
+            <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
               I'm a full stack web developer.
             </div>);
             break;
         case 1:
           setIntro(
-            <div id="intro" className='type-writer border-r-2 whitespace-nowrap overflow-hidden border-blue-600'>
+            <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
               I build modern web solutions.
             </div>
           );
           break;
         case 2:
           setIntro(
-            <div id="intro" className='type-writer border-r-2 whitespace-nowrap overflow-hidden border-blue-600'>
+            <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
               I love to learn and grow.
             </div>
           );
           break;
         default:
-          break;
+            break;
       }
       counter = counter === 2 ? 0 : counter += 1;
     }, 5000);
