@@ -5,7 +5,7 @@
   z-index: 2;
   background-color: #0e0e14;
   color: white;
-  position: absolute;
+  position: relative;
 }
 
 .expertise-page__about-me {

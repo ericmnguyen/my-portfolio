@@ -1,0 +1,11 @@
+.projects-page {
+  background: linear-gradient(to bottom, #0e0e14, #432c51);
+  color: white;
+  position: relative;
+}
+
+.projects-page__title {
+  font-family: Caveat, cursive;
+  color: white;
+  font-size: 40px;
+}

@@ -47,22 +47,19 @@
 }
 
 .greetings__line3 {
-  letter-spacing: 21px;
+  letter-spacing: 5px;
   color: rgb(22, 133, 223);
-  font-weight: 400;
+  font-weight: 200;
   font-size: 28px;
   margin-bottom: 18px;
   z-index: 1;
+  font-style: italic;
 }
 
 .greetings__line3 .type-writer {
-  border-right: solid white;
-  border-width: 5px;
-  white-space: nowrap;
-  overflow: hidden;
   /* Ensures the content is not revealed until the animation */
-  animation: typing 3s steps(13, end),
-    blink-caret 1s step-end infinite;
+  animation: typing 1s steps(200, end),
+    blink-caret 0.5s step-end infinite 1s;
 }
 
 /* The typing effect */
