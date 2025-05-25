@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'antd';
 import { DownloadOutlined, GithubOutlined, LinkedinFilled, WhatsAppOutlined } from '@ant-design/icons';
-import avatar from '../../avatar_square.png';
+import avatar from '../../utils/img/avatar_square.png';
 import './styles.css';
 import TypeWriter from './TypeWriter';
 
@@ -21,7 +21,7 @@ const Greetings = () => {
   }
 
   const handleOnClickGithub = () => {
-    window.open('https://github.com/nathanmng');
+    window.open('https://github.com/ericmnguyen');
   };
 
   const handleOnClickWhatsapp = () => {
@@ -29,7 +29,7 @@ const Greetings = () => {
   };
 
   const handleOnClickLinkedin = () => {
-    window.open('https://www.linkedin.com/in/nathanmng/');
+    window.open('https://www.linkedin.com/in/ericmng/');
   };
 
   return (
@@ -41,12 +41,15 @@ const Greetings = () => {
       <img className='avatar' src={avatar} alt='me' />
       </div>
       <div className='greetings__line4'>
-        <Button ghost shape="round" onClick={handleOnClickDownloadCV} icon={<DownloadOutlined />} className="btn-download-cv" size='large'>
+        <Button ghost shape="round" onClick={handleOnClickDownloadCV} icon={<DownloadOutlined />} className="btn-download-cv z-10" size='large'>
           Download CV
         </Button>
-        <Button icon={<GithubOutlined />} onClick={handleOnClickGithub} ghost shape="circle" className='btn-git' size='large' />
-        <Button icon={<WhatsAppOutlined />} onClick={handleOnClickWhatsapp} ghost shape="circle" className='btn-whatsapp' size='large' />
-        <Button icon={<LinkedinFilled />} onClick={handleOnClickLinkedin} ghost shape="circle" className='btn-linkedin' size='large' />
+        {/* <button className='btn-download-cv z-10 border-2 p-4 rounded-full'>
+          Download CV
+        </button> */}
+        <Button icon={<GithubOutlined />} onClick={handleOnClickGithub} ghost shape="circle" className='btn-git z-10' size='large' />
+        <Button icon={<WhatsAppOutlined />} onClick={handleOnClickWhatsapp} ghost shape="circle" className='btn-whatsapp z-10' size='large' />
+        <Button icon={<LinkedinFilled />} onClick={handleOnClickLinkedin} ghost shape="circle" className='btn-linkedin z-10' size='large' />
       </div>
 
     </div>

@@ -10,7 +10,7 @@ const AboutMe = () => {
         with over <span className='front-end-text'>five years</span> of hands-on experience architecting and delivering complex, high impact web applications.
         </p>
         <p>My expertise spans the full JavaScript ecosystem - React, Redux, NodeJS, and modern build tools - across diverse industries including 
-          <span className='text--italic'>Automotive</span>,
+          <span className='text--italic'> Automotive</span>,
           <span className='text--italic'> Wholesale</span>,
           <span className='text--italic'> Insurance</span> and
           <span className='text--italic'> Education</span>.

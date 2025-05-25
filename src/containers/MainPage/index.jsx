@@ -1,6 +1,6 @@
 import React from 'react';
 import Greetings from './Greetings';
-import portrait from '../../avatar.png';
+import portrait from '../../utils/img/avatar.png';
 import './styles.css';
 import ScrollDownIcon from '../../components/ScrollDownIcon';
 
@@ -22,7 +22,7 @@ const MainPage = () => {
         </span>
       </span> */}
       <ScrollDownIcon />
-      <span className='circle'></span>
+      <span className='circle z-0'></span>
     </div>
   )
 }
