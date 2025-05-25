@@ -5,19 +5,6 @@
   position: relative;
 }
 
-.main-page__dev-name {
-  padding: 5vh 0px 0px 15vw;
-  font-size: 28px;
-}
-
-.main-page__dev-name--white {
-  color: white;
-}
-
-.main-page__bracket--blue {
-  color: rgb(22, 133, 223);
-}
-
 /** Title customization */
 
 .greetings {
@@ -75,7 +62,6 @@
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-
   from,
   to {
     border-color: #0966C2
@@ -170,11 +156,6 @@
 
 /** Responsive customization */
 @media only screen and (max-width: 820px) {
-  .main-page__dev-name {
-    padding: 5vh 0px 0px 15vw;
-    font-size: 12px;
-  }
-
   .greetings {
     margin: 12px 0px 0px 15vw;
   }
