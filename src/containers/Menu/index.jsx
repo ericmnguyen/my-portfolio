@@ -92,6 +92,7 @@ import React, { useState, useEffect } from 'react';
 
 const NavigationPanel = () => {
   const [isAtTop, setIsAtTop] = useState(true);
+  const [selectedItem, setSelectedItem] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -107,9 +108,39 @@ const NavigationPanel = () => {
   }, []);
 
   console.log(isAtTop);
+
+  const onSelect = (selectedItem) => {
+    setSelectedItem(selectedItem);
+    switch (selectedItem) {
+      case 'HOME':
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        break;
+      case 'ABOUT':
+        window.scrollTo({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
+        break;
+      case 'APPS':
+        var ele = document.getElementById('apps');
+        var topPos = ele.offsetTop;
+        window.scrollTo({
+          top: topPos,
+          behavior: 'smooth'
+        });
+        break;
+      default:
+        break;
+    }
+  }
   
 
-  const menuClasses = isAtTop ? 'menu fixed top-0 flex flex-row justify-between bg-gray-800 w-full h-16 z-10 bg-transparent' : 'menu fixed top-0 flex flex-row justify-between bg-gray-800 w-full h-16 z-10';
+  const menuClasses = isAtTop ? 
+    'menu fixed top-0 flex flex-row justify-between bg-gray-800 w-full h-16 z-10 transition-all duration-1000 bg-transparent' : 
+    'menu fixed top-0 flex flex-row justify-between w-full h-20 z-10 bg-opacity-80 transition-all duration-1000 bg-gray-800';
 
   return (
     <nav className={menuClasses}>
@@ -122,10 +153,10 @@ const NavigationPanel = () => {
       </span>
       <p className='items-center justify-center content-center pr-20 md:pr-32 h-full text-white'>
         <ul className='flex flex-row h-full items-center text-lg font-mono tracking-wide'>
-          <li>HOME</li>
-          <li><a href="">ABOUT ME</a></li>
-          <li>MINI APPS</li>
-          <li>CONTACT</li>
+          <li className='menu__hover-underline-animation left'><button onClick={() => onSelect('HOME')}>HOME</button></li>
+          <li className='menu__hover-underline-animation left'><button onClick={() => onSelect('ABOUT')}>ABOUT ME</button></li>
+          <li className='menu__hover-underline-animation left'><button onClick={() => onSelect('APPS')}>MINI APPS</button></li>
+          <li className='menu__hover-underline-animation left'><button onClick={() => onSelect('CONTACT')}>CONTACT</button></li>
         </ul>
       </p>
     </nav>

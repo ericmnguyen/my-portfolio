@@ -4,7 +4,7 @@ import { Divider } from 'antd';
 const AboutMe = () => {
   return (
     <div className='about-me'>
-      <Divider orientation="left"><h1 className='about-me__title'>About Me</h1></Divider>
+      <Divider orientation="left"><h1 className='about-me__title text-white font-mono italic text-3xl'>About Me</h1></Divider>
       <div className='about-me__description'>
         <p>Hi, I'm Eric, a <span className='front-end-text'>senior front-end</span> developer
         with over <span className='front-end-text'>five years</span> of hands-on experience architecting and delivering complex, high impact web applications.

@@ -7,8 +7,8 @@ import ScrollDownIcon from "../../components/ScrollDownIcon";
 
 const Projects = () => {
   return (
-    <div className="projects-page bg-black p-10 pb-16">
-      <p className='projects-page__title'>List of my mini apps</p>
+    <div id='apps' className="projects-page bg-black p-10 pb-16">
+      <h2 className='projects-page__title text-white font-mono italic text-3xl pl-24'>List of my mini apps</h2>
       <div className="projects-page__app-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 justify-items-center">
         <Card image={project1} title="My Porfolio" tags={['react', 'redux', 'tailwind', 'html', 'css']} link='https://github.com/ericmnguyen/my-portfolio' />
         <Card image={HealthClinic} title="Mental Health Clinic" tags={['html', 'css', 'javascript', 'aws lambda', 'AI bot']} link='https://github.com/ericmnguyen/my-portfolio' />
