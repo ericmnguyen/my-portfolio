@@ -7,7 +7,7 @@ import ScrollDownIcon from "../../components/ScrollDownIcon";
 
 
 const Expertise = () => (
-  <div className="expertise-page">
+  <div id='expertise' className="expertise-page">
     <Row className="expertise-page__about-me">
       <Col className="gutter-row" xs={24} md={12}>
         <AboutMe />

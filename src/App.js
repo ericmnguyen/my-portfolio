@@ -4,6 +4,7 @@ import 'antd/dist/reset.css';
 import NavigationPanel from './containers/Menu';
 import Expertise from './containers/Expertise';
 import Projects from './containers/Projects';
+import Contact from './containers/Contact';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <MainPage />
       <Expertise />
       <Projects />
+      <Contact />
       {/* <Button type='primary' style={{ zIndex: '2' }}>Button</Button> */}
     </div>
   );
