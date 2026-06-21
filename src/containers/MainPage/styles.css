@@ -17,18 +17,17 @@
 }
 
 .greetings__line1 {
-  text-transform: lowercase;
   font-size: 80px;
   font-weight: 100;
   font-family: monospace;
   margin-bottom: 12px;
-  letter-spacing: 21px;
+  letter-spacing: 1px;
   z-index: 1;
 }
 
 .greetings__line2 {
   font-size: 120px;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 15px;
   z-index: 1;
 }
@@ -92,9 +91,12 @@
   border-color: transparent;
   margin-right: 15px;
   color: white;
+
+  background-color: rgba(31, 31, 32, 0.762);
 }
 
-.btn-download-cv.ant-btn-default:hover {
+.btn-download-cv:hover.ant-btn-default:hover {
+  background-color: rgba(0, 0, 0, 0.762);
   color: white;
   transform: scale(1.05, 1.05);
   transition: transform 0.1s;
@@ -107,7 +109,8 @@
   color: white;
 }
 
-.btn-git.ant-btn-default:hover {
+.btn-git:hover.ant-btn-default:hover {
+  background-color: rgba(0, 0, 0, 0.762);
   color: white;
   transform: scale(1.2, 1.2);
   transition: transform 0.1s;
@@ -121,6 +124,7 @@
 }
 
 .btn-linkedin.ant-btn-default:hover {
+  background-color: rgba(0, 0, 0, 0.762);
   transform: scale(1.2, 1.2);
   transition: transform 0.1s;
 }
@@ -132,7 +136,8 @@
   color: #43C553;
 }
 
-.btn-whatsapp.ant-btn-default:hover {
+.btn-whatsapp:hover.ant-btn-default:hover {
+  background-color: rgba(0, 0, 0, 0.762);
   color: #32d445;
   transform: scale(1.2, 1.2);
   transition: transform 0.1s;
@@ -161,7 +166,6 @@
   }
 
   .greetings__line1 {
-    text-transform: lowercase;
     font-size: 20px;
   }
 

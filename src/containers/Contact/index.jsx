@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Tooltip } from 'antd';
+import { Button } from 'antd';
 import qrCode from '../../utils/img/Whatsapp-QR.jpeg';
 
 
@@ -25,7 +25,7 @@ const EnquiryPage = () => {
           <input type="email" placeholder="Your Email" className="enquiry__contact-input w-full mb-4 p-2 rounded bg-gray-800 text-white border border-gray-600" />
           <textarea placeholder="Your Message" className="enquiry__contact-textarea w-full mb-4 p-2 rounded bg-gray-800 text-white border border-gray-600" rows="5"></textarea>
           <Button className="enquiry__contact-submit bg-transparent border-white border hover:bg-white 
-          text-white hover:text-black transition duration-500 font-bold py-2 px-4 rounded h-10">
+          text-white hover:text-black transition duration-500 font-bold py-2 px-4 rounded h-10 disabled:bg-zinc-400" disabled>
             Send Message
           </Button>
         </div>

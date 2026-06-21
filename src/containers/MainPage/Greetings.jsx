@@ -34,19 +34,16 @@ const Greetings = () => {
 
   return (
     <div className='greetings'>
-      <div className='greetings__line1'>Hello!</div>
+      <div className='greetings__line1'>Hi!</div>
       <div className='greetings__line2'>I'm Eric</div>
       <TypeWriter />
       <div className='greetings__line_avatar'>
       <img className='avatar' src={avatar} alt='me' />
       </div>
       <div className='greetings__line4'>
-        <Button ghost shape="round" onClick={handleOnClickDownloadCV} icon={<DownloadOutlined />} className="btn-download-cv z-10" size='large'>
+        <Button ghost shape="round" onClick={handleOnClickDownloadCV} icon={<DownloadOutlined />} className="btn-download-cv z-10 bg-gray-500 " size='large'>
           Download CV
         </Button>
-        {/* <button className='btn-download-cv z-10 border-2 p-4 rounded-full'>
-          Download CV
-        </button> */}
         <Button icon={<GithubOutlined />} onClick={handleOnClickGithub} ghost shape="circle" className='btn-git z-10' size='large' />
         <Button icon={<WhatsAppOutlined />} onClick={handleOnClickWhatsapp} ghost shape="circle" className='btn-whatsapp z-10' size='large' />
         <Button icon={<LinkedinFilled />} onClick={handleOnClickLinkedin} ghost shape="circle" className='btn-linkedin z-10' size='large' />
