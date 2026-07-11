@@ -26,14 +26,14 @@ const TypeWriter = () => {
         case 1:
           setIntro(
             <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
-              I build modern web solutions.
+              I build efficient web solutions.
             </div>
           );
           break;
         case 2:
           setIntro(
             <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
-              I love to learn and grow.
+              Eat. Sleep. {'<Code>'}.
             </div>
           );
           break;
