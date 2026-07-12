@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Button } from 'antd';
 import qrCode from '../../utils/img/Whatsapp-QR.jpeg';
 import { useForm } from 'react-hook-form';
@@ -11,11 +11,17 @@ const EnquiryPage = () => {
   const [submitError, setSubmitError] = useState("");
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
   const [token, setToken] = useState(null);
+  const turnstileRef = useRef(null);
 
   const copyEmail = () => {
     navigator.clipboard.writeText('nhat.eric.nguyen@gmail.com');
     setEmailCopied(true);
     setTimeout(() => setEmailCopied(false), 5000);
+  };
+
+  const resetTurnstile = () => {
+    setToken(null);
+    turnstileRef.current?.reset();
   };
 
   const onSubmit = async (data) => {
@@ -27,18 +33,18 @@ const EnquiryPage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({...data, turnstileToken: token}),
+        body: JSON.stringify({ ...data, turnstileToken: token }),
       });
       const result = await response.json().catch(() => ({}));
 
       if (!response.ok) {
         throw new Error(result.message || "Something went wrong. Please try again.");
       }
-
       reset();
       setIsFormDisplayed(false);
     } catch (error) {
       setSubmitError(error.message || "Unable to send your message. Please try again.");
+      resetTurnstile();
     }
   }
 
@@ -60,21 +66,32 @@ const EnquiryPage = () => {
                 {errors.email && <p className="text-red-400 text-xs mb-3">{errors.email.message}</p>}
                 <textarea placeholder="Your Message" className="enquiry__contact-textarea w-full mb-2 p-2 rounded bg-gray-800 text-white border border-gray-600" rows="5" {...register("message", { required: "Your message is required.", maxLength: { value: 5000, message: "Your message must be 5000 characters or fewer." } })}></textarea>
                 {errors.message && <p className="text-red-400 text-xs mb-3">{errors.message.message}</p>}
-
-
                 <Turnstile
+                  ref={turnstileRef}
                   siteKey={process.env.REACT_APP_TURNSTILE_SITE_KEY}
-                  onSuccess={(token) => setToken(token)}
-                  onError={() => console.log("Turnstile Error")}
-                  onExpire={() => setToken(null)}
-                  options={{ theme: "dark" }}
+                  onSuccess={(newToken) => {
+                    setToken(newToken);
+                    setSubmitError("");
+                  }}
+                  onExpire={() => {
+                    setToken(null);
+                    setSubmitError("Verification expired. Please try again.");
+                  }}
+                  onError={() => {
+                    setToken(null);
+                    setSubmitError("Verification failed. Please try again.");
+                  }}
+                  options={{
+                    action: "contact-form",
+                    theme: "dark",
+                    size: "flexible",
+                    responseField: false,
+                    refreshExpired: "auto",
+                  }}
                 />
-
-
-
                 {submitError && <p className="text-red-400 text-xs mb-3">{submitError}</p>}
                 <input className="enquiry__contact-submit bg-transparent border-white border hover:bg-white 
-          text-white hover:text-black transition duration-500 font-bold py-2 px-4 rounded h-10 disabled:bg-zinc-400" type="submit" disabled={isSubmitting || !token} value={isSubmitting ? "Sending..." : "Submit"} />
+          text-white hover:text-black transition duration-500 font-bold my-2 py-2 px-4 rounded h-10 disabled:bg-zinc-400" type="submit" disabled={isSubmitting || !token} value={isSubmitting ? "Sending..." : "Submit"} />
               </form>
             ) :
               (
