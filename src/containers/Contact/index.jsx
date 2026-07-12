@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from 'antd';
 import qrCode from '../../utils/img/Whatsapp-QR.jpeg';
 import { useForm } from 'react-hook-form';
+import { Turnstile } from "@marsidev/react-turnstile";
 
 
 const EnquiryPage = () => {
@@ -9,6 +10,7 @@ const EnquiryPage = () => {
   const [isFormDisplayed, setIsFormDisplayed] = useState(true);
   const [submitError, setSubmitError] = useState("");
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
+  const [token, setToken] = useState(null);
 
   const copyEmail = () => {
     navigator.clipboard.writeText('nhat.eric.nguyen@gmail.com');
@@ -19,25 +21,25 @@ const EnquiryPage = () => {
   const onSubmit = async (data) => {
     setSubmitError("");
 
-    console.log("Form submitted:", data);
+    try {
+      const response = await fetch(process.env.REACT_APP_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({...data, turnstileToken: token}),
+      });
+      const result = await response.json().catch(() => ({}));
 
-    // const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:4000";
-    // const response = await fetch(`${apiUrl}/enquiries`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // });
+      if (!response.ok) {
+        throw new Error(result.message || "Something went wrong. Please try again.");
+      }
 
-    // if (!response.ok) {
-    //   const result = await response.json().catch(() => ({}));
-    //   setSubmitError(result.message || "Something went wrong. Please try again.");
-    //   return;
-    // }
-
-    reset();
-    setIsFormDisplayed(false);
+      reset();
+      setIsFormDisplayed(false);
+    } catch (error) {
+      setSubmitError(error.message || "Unable to send your message. Please try again.");
+    }
   }
 
   return (
@@ -52,26 +54,27 @@ const EnquiryPage = () => {
             isFormDisplayed ? (
               <form onSubmit={handleSubmit(onSubmit)} noValidate>
                 <p className="enquiry__contact-form-placeholder text-white text-2xl font-bold">Share Your Vision</p>
-                <input type="text" placeholder="Your Name" className="enquiry__contact-input w-full mb-2 p-2 rounded bg-gray-800 text-white border border-gray-600" {...register("name", { required: "Your name is required." })} />
+                <input type="text" placeholder="Your Name" className="enquiry__contact-input w-full mb-2 p-2 rounded bg-gray-800 text-white border border-gray-600" {...register("name", { required: "Your name is required.", maxLength: { value: 100, message: "Your name must be 100 characters or fewer." } })} />
                 {errors.name && <p className="text-red-400 text-xs mb-3">{errors.name.message}</p>}
-                <input type="email" placeholder="Your Email" className="enquiry__contact-input w-full mb-2 p-2 rounded bg-gray-800 text-white border border-gray-600" {...register("email", { required: "Your email is required." })} />
+                <input type="email" placeholder="Your Email" className="enquiry__contact-input w-full mb-2 p-2 rounded bg-gray-800 text-white border border-gray-600" {...register("email", { required: "Your email is required.", maxLength: { value: 254, message: "Your email must be 254 characters or fewer." }, pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Enter a valid email address." } })} />
                 {errors.email && <p className="text-red-400 text-xs mb-3">{errors.email.message}</p>}
-                <textarea placeholder="Your Message" className="enquiry__contact-textarea w-full mb-2 p-2 rounded bg-gray-800 text-white border border-gray-600" rows="5" {...register("message", { required: "Your message is required." })}></textarea>
+                <textarea placeholder="Your Message" className="enquiry__contact-textarea w-full mb-2 p-2 rounded bg-gray-800 text-white border border-gray-600" rows="5" {...register("message", { required: "Your message is required.", maxLength: { value: 5000, message: "Your message must be 5000 characters or fewer." } })}></textarea>
                 {errors.message && <p className="text-red-400 text-xs mb-3">{errors.message.message}</p>}
 
-                <label className="mb-2 flex items-center gap-2 text-sm text-white">
-                  <input
-                    type="checkbox"
-                    className="h-4 w-4 accent-purple-600"
-                    {...register("notRobot", { required: "Please confirm you're not a robot." })}
-                  />
-                  I'm not a robot
-                </label>
-                {errors.notRobot && <p className="text-red-400 text-xs mb-3">{errors.notRobot.message}</p>}
+
+                <Turnstile
+                  siteKey={process.env.REACT_APP_TURNSTILE_SITE_KEY}
+                  onSuccess={(token) => setToken(token)}
+                  onError={() => console.log("Turnstile Error")}
+                  onExpire={() => setToken(null)}
+                  options={{ theme: "dark" }}
+                />
+
+
 
                 {submitError && <p className="text-red-400 text-xs mb-3">{submitError}</p>}
                 <input className="enquiry__contact-submit bg-transparent border-white border hover:bg-white 
-          text-white hover:text-black transition duration-500 font-bold py-2 px-4 rounded h-10 disabled:bg-zinc-400" type="submit" disabled={isSubmitting} value={isSubmitting ? "Sending..." : "Submit"} />
+          text-white hover:text-black transition duration-500 font-bold py-2 px-4 rounded h-10 disabled:bg-zinc-400" type="submit" disabled={isSubmitting || !token} value={isSubmitting ? "Sending..." : "Submit"} />
               </form>
             ) :
               (
