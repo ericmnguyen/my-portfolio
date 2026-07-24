@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Button } from 'antd';
-import qrCode from '../../utils/img/Whatsapp-QR.jpeg';
+import qrCode from '../../utils/img/qrcode.png';
 import { useForm } from 'react-hook-form';
 import { Turnstile } from "@marsidev/react-turnstile";
 
