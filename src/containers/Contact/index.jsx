@@ -50,8 +50,8 @@ const EnquiryPage = () => {
 
   return (
     <div className="enquiry-page bg-black p-10 pb-16 pt-24 font-mono" id="enquiry">
-      <h1 className="enquiry__title text-white font-mono italic text-3xl pl-24">Start your project</h1>
-      <p className="enquiry__description text-white text-lg mt-4 pl-24">
+      <h1 className="enquiry__title text-white font-mono italic text-3xl md:pl-24">Start your project</h1>
+      <p className="enquiry__description text-white text-lg mt-4 md:pl-24">
         Have a project in mind? Let's discuss how I can help bring your ideas to life.
       </p>
       <div className="enquiry__contact-info mt-6 text-white grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -107,7 +107,7 @@ const EnquiryPage = () => {
               )
           }
         </div>
-        <div className="enquiry__contact-details m-3 border-2 border-gray-600 md:p-6 rounded-lg bg-purple-800 bg-opacity-20">
+        <div className="enquiry__contact-details m-3 border-2 border-gray-600 p-3 md:p-6 rounded-lg bg-purple-800 bg-opacity-20">
           <p className="enquiry__contact-form-placeholder text-white text-2xl font-bold">Scan me for quick contact</p>
           <div className="enquiry__contact-qr-container mb-4 flex justify-center">
             <img src={qrCode} alt="QR Code" className="enquiry__contact-qr w-48 h-48" />
@@ -118,7 +118,7 @@ const EnquiryPage = () => {
               <span className="italic">nhat.eric.nguyen@gmail.com</span>
             </p>
             <Button className="enquiry__contact-submit bg-transparent border-white border hover:bg-white 
-          text-white hover:text-black transition duration-500 font-bold py-2 px-4 rounded h-10 mr-3"
+          text-white hover:text-black transition duration-500 font-bold pt-2 px-4 rounded h-10 mr-3 mb-2"
               onClick={() => window.location.href = 'mailto:nhat.eric.nguyen@gmail.com'}>
               Send Email
             </Button>

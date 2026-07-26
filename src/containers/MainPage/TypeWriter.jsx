@@ -20,27 +20,47 @@ const TypeWriter = () => {
         case 0:
           setIntro(
             <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
-              I'm a full stack web developer.
+              "Bad code can be cleaned up..."
             </div>);
             break;
         case 1:
           setIntro(
             <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
-              I build efficient web solutions.
-            </div>
-          );
-          break;
+              "...but it's very expensive."
+            </div>);
+            break;
         case 2:
           setIntro(
             <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
-              Eat. Sleep. {'<Code>'}.
+              "Java is to JavaScript..."
+            </div>
+          );
+          break;
+        case 3:
+          setIntro(
+            <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
+              "...as ham is to hamster."
+            </div>
+          );
+          break;
+        case 4:
+          setIntro(
+            <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
+              "Behind every good program..."
+            </div>
+          );
+          break;
+        case 5:
+          setIntro(
+            <div id="intro" className='type-writer border-r-8 whitespace-nowrap overflow-hidden border-blue-600'>
+              "...is a frustrated programmer."
             </div>
           );
           break;
         default:
             break;
       }
-      counter = counter === 2 ? 0 : counter += 1;
+      counter = counter === 5 ? 0 : counter += 1;
     }, 5000);
     return () => clearInterval(intervalId);
   }, []);

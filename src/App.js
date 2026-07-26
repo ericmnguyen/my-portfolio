@@ -5,6 +5,7 @@ import NavigationPanel from './containers/Menu';
 import Expertise from './containers/Expertise';
 import Projects from './containers/Projects';
 import Contact from './containers/Contact';
+import Footer from './containers/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Expertise />
       <Projects />
       <Contact />
+      <Footer />
       {/* <Button type='primary' style={{ zIndex: '2' }}>Button</Button> */}
     </div>
   );
