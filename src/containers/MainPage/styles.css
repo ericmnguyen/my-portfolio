@@ -162,7 +162,7 @@
 /** Responsive customization */
 @media only screen and (max-width: 820px) {
   .greetings {
-    margin: 12px 0px 0px 15vw;
+    margin: 60px 0px 0px 15vw;
   }
 
   .greetings__line1 {
@@ -174,7 +174,7 @@
   }
 
   .greetings__line3 {
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     font-size: 12px;
   }
 
